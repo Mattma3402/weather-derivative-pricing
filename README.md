@@ -58,19 +58,6 @@ Monthly CDD = sum of daily CDD values.
 
 ---
 
-## Repository Structure
-
-```
-weather-derivative/
-├── notebook.ipynb         # Main Jupyter notebook (data → model → simulation → results)
-├── slides.pdf             # 3-minute presentation slides
-├── data/                  # Cached or downloaded weather data (optional)
-├── figures/               # Output figures for README and slides
-├── requirements.txt       # Python dependencies
-└── README.md              # Project description (this file)
-```
-
----
 
 ## How to Run
 
@@ -87,7 +74,7 @@ weather-derivative/
 
 3. **Run the notebook**
    ```bash
-   jupyter notebook notebook.ipynb
+   jupyter notebook weather.ipynb
    ```
 
 4. *(Optional)* Modify parameters in the first cell:
