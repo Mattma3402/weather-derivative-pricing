@@ -1,4 +1,4 @@
-# Weather Derivatives for Risk Management
+# 🌤️ Weather Derivatives for Risk Management
 **Pricing a Cooling Degree Days (CDD) Option using Real Weather Data**
 
 This project models and prices a temperature-based derivative that helps companies hedge against weather-related risks.  
@@ -6,7 +6,7 @@ By analyzing historical temperature data and simulating future scenarios, we est
 
 ---
 
-## Project Goal
+## 🎯 Project Goal
 
 Weather derivatives are financial contracts whose payoffs depend on weather variables such as temperature, rainfall, or snowfall.  
 In this project, we focus on a **July Cooling Degree Days (CDD)** derivative for **Des Moines, Iowa**, and estimate its price using historical and simulated temperature data.
@@ -17,7 +17,7 @@ In this project, we focus on a **July Cooling Degree Days (CDD)** derivative for
 
 ---
 
-## Methodology
+## 💡 Methodology
 
 ### 1. Data Source
 - **Historical daily temperature data** from the [Meteostat API](https://dev.meteostat.net/).
@@ -35,7 +35,7 @@ Monthly CDD = sum of daily CDD values.
 \text{Payout} = \text{Notional} \times \max(\text{CDD}_{total} - K, 0)
 \]
 - Strike \( K = 200 \)  
-- Notional = \$100 per CDD  
+- Notional = $100 per CDD  
 
 ### 4. Statistical Modeling
 - **Seasonal model:** \( T_t = a + b \sin(2\pi t / 365) + c \cos(2\pi t / 365) + \epsilon_t \)
@@ -45,11 +45,11 @@ Monthly CDD = sum of daily CDD values.
 
 ---
 
-## Key Findings
+## 📊 Key Findings
 
 - Historical July CDDs (2000–2024) range roughly **150–310 CDD** in Des Moines.
 - Simulated mean July CDD ≈ **230**, consistent with historical mean.
-- **Estimated option price ≈ \$1,250** (for strike 200, notional \$100/CDD).
+- **Estimated option price ≈ $1,250** (for strike 200, notional $100/CDD).
 - The distribution of simulated CDD totals closely matches the historical one.
 
 <p align="center">
@@ -60,3 +60,79 @@ Monthly CDD = sum of daily CDD values.
 
 ## 📂 Repository Structure
 
+```
+weather-derivative/
+├── notebook.ipynb         # Main Jupyter notebook (data → model → simulation → results)
+├── slides.pdf             # 3-minute presentation slides
+├── data/                  # Cached or downloaded weather data (optional)
+├── figures/               # Output figures for README and slides
+├── requirements.txt       # Python dependencies
+└── README.md              # Project description (this file)
+```
+
+---
+
+## ⚙️ How to Run
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/weather-derivative.git
+   cd weather-derivative
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the notebook**
+   ```bash
+   jupyter notebook notebook.ipynb
+   ```
+
+4. *(Optional)* Modify parameters in the first cell:
+   - `station_id`, `month_to_price`
+   - `base_temp`, `strike`, `notional`
+   - `n_sim` for number of Monte Carlo runs
+
+---
+
+## 🧮 Dependencies
+
+- Python ≥ 3.10  
+- pandas  
+- numpy  
+- matplotlib  
+- statsmodels  
+- meteostat  
+- tqdm  
+
+Install them via:
+```bash
+pip install pandas numpy matplotlib statsmodels meteostat tqdm
+```
+
+---
+
+## 🧠 Insights & Lessons Learned
+
+- Weather derivatives are valuable **risk management tools** for non-financial sectors.
+- Even simple models (seasonality + AR(1)) can capture realistic temperature dynamics.
+- Monte Carlo simulation provides intuitive **pricing and risk insights**.
+- Challenges remain in calibration and determining **market risk premia**, since weather is **non-tradable**.
+
+---
+
+## 📚 References
+
+- Meteostat Python Library: [https://dev.meteostat.net/](https://dev.meteostat.net/)
+- Hull, J. C. *Options, Futures, and Other Derivatives*, 11th Edition.  
+- Cao, M. and Wei, J. (2000). *Pricing the Weather*. *Risk Magazine*.  
+- Jewson, S., Brix, A., & Ziehmann, C. (2005). *Weather Derivative Valuation*. Cambridge University Press.
+
+---
+
+**Author:** Tao Ma  
+**Program:** Fall 2025 Quant Finance Boot Camp — The Erdős Institute  
+**Duration:** ~3-minute presentation + Jupyter notebook demonstration  
+**Last updated:** November 2025
