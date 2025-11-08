@@ -1,4 +1,4 @@
-# 🌤️ Weather Derivatives for Risk Management
+# Weather Derivatives for Risk Management
 **Pricing a Cooling Degree Days (CDD) Option using Real Weather Data**
 
 This project models and prices a temperature-based derivative that helps companies hedge against weather-related risks.  
@@ -6,7 +6,7 @@ By analyzing historical temperature data and simulating future scenarios, we est
 
 ---
 
-## 🎯 Project Goal
+## Project Goal
 
 Weather derivatives are financial contracts whose payoffs depend on weather variables such as temperature, rainfall, or snowfall.  
 In this project, we focus on a **July Cooling Degree Days (CDD)** derivative for **Des Moines, Iowa**, and estimate its price using historical and simulated temperature data.
@@ -17,7 +17,7 @@ In this project, we focus on a **July Cooling Degree Days (CDD)** derivative for
 
 ---
 
-## 💡 Methodology
+## Methodology
 
 ### 1. Data Source
 - **Historical daily temperature data** from the [Meteostat API](https://dev.meteostat.net/).
@@ -45,7 +45,7 @@ Monthly CDD = sum of daily CDD values.
 
 ---
 
-## 📊 Key Findings
+## Key Findings
 
 - Historical July CDDs (2000–2024) range roughly **150–310 CDD** in Des Moines.
 - Simulated mean July CDD ≈ **230**, consistent with historical mean.
@@ -58,7 +58,7 @@ Monthly CDD = sum of daily CDD values.
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 weather-derivative/
@@ -72,7 +72,7 @@ weather-derivative/
 
 ---
 
-## ⚙️ How to Run
+## How to Run
 
 1. **Clone the repository**
    ```bash
@@ -97,7 +97,7 @@ weather-derivative/
 
 ---
 
-## 🧮 Dependencies
+## Dependencies
 
 - Python ≥ 3.10  
 - pandas  
@@ -114,7 +114,7 @@ pip install pandas numpy matplotlib statsmodels meteostat tqdm
 
 ---
 
-## 🧠 Insights & Lessons Learned
+## Insights & Lessons Learned
 
 - Weather derivatives are valuable **risk management tools** for non-financial sectors.
 - Even simple models (seasonality + AR(1)) can capture realistic temperature dynamics.
@@ -123,7 +123,7 @@ pip install pandas numpy matplotlib statsmodels meteostat tqdm
 
 ---
 
-## 📚 References
+## References
 
 - Meteostat Python Library: [https://dev.meteostat.net/](https://dev.meteostat.net/)
 - Hull, J. C. *Options, Futures, and Other Derivatives*, 11th Edition.  
